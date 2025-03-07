@@ -6,7 +6,7 @@ from picarta import Picarta
 app = Flask(__name__)
 
 # Initialize Picarta with API token
-api_token = "7Y3BMGXEUAZBDB80H15R"
+api_token = "PLACE YOUR API KEY HERE"
 localizer = Picarta(api_token)
 
 @app.route('/')
