@@ -25,7 +25,7 @@ Once the venv is created in your directory, you need to activate the venv. This 
 Example:
 
     GeoImage_venv\Scripts\activate
-STEP 3) Now that your venv is active, you can install Whisper within this venv. NOTE: if you close the terminal you will need to reactivate the venv. Make sure that you have downloaded the file "requirements.txt" and place it in your directory Installing dependencies:
+STEP 3) Now that your venv is active, you can install Picarta within this venv. NOTE: if you close the terminal you will need to reactivate the venv. Make sure that you have downloaded the file "requirements.txt" and place it in your directory Installing dependencies:
 
     pip install -r requirements.txt
 "pip" is the code you will use to install most python libraries and dependencies.
@@ -92,3 +92,34 @@ Running the program
 In your GeoImage_venv:
 
     python Geo_Image.py
+
+Run as a Desktop Application by creating a .bat
+
+Open a Notepad and paste:
+
+        @echo off
+
+        :: Change directory to the picarta folder
+        cd LOCATIO\OF\YOUR\DIRECTORY\picarta
+
+        :: Check if the virtual environment exists
+        IF NOT EXIST GeoImage_venv\Scripts\activate.bat (
+            echo Virtual environment not found! Exiting...
+            pause
+            exit /b
+        )
+
+        :: Activate the virtual environment
+        call GeoImage_venv\Scripts\activate.bat
+
+        :: Run the Python script
+        python Geo_Image.py
+
+        :: Deactivate the virtual environment after the script finishes
+        deactivate
+
+        :: Pause to keep the window open
+        pause
+Save the file to your desktop:
+
+    AI_Image_Search.bat
